@@ -395,7 +395,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>replacer 可选<br>如果该参数是一个函数，则在序列化过程中，被序列化的值的每个属性都会经过该函数的转换和处理；如果该参数是一个数组，则只有包含在这个数组中的属性名才会被序列化到最终的 JSON 字符串中；如果该参数为 null 或者未提供，则对象所有的属性都会被序列化。</li>
 </ul>
 <p>那我们只需要通过replacer传入函数过滤掉属性值是Object即可</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify(message,<span class="function">(<span class="params">k,v</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// k,v分别代表传入对象的属性名和属性值</span></span><br><span class="line">    <span class="comment">// 判断k是因为replace会传入一个 传入参数对象 的值,但是没有k, 我们直接返回即可</span></span><br><span class="line">    <span class="keyword">if</span>(k) &#123;</span><br><span class="line">        <span class="keyword">return</span> v</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> v === <span class="string">&quot;object&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> v</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify(message,<span class="function">(<span class="params">k,v</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// k,v分别代表传入对象的属性名和属性值</span></span><br><span class="line">    <span class="comment">// 判断k是因为replace会传入一个 传入参数对象 的值,但是没有k, 我们直接返回即可</span></span><br><span class="line">    <span class="keyword">if</span>(!k) &#123;</span><br><span class="line">        <span class="keyword">return</span> v</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> v === <span class="string">&quot;object&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> v</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -439,10 +439,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-01T01:32:18+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-06T02:45:44+00:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年9月1日</p>
+    <p>更新于：2021年9月6日</p>
   </a>
 </div>
 
