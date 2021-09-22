@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://luanxu.me/posts/45583/</loc>
-    
-    <lastmod>2021-09-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://luanxu.me/posts/29099/</loc>
     
     <lastmod>2021-09-22</lastmod>
@@ -50,6 +43,20 @@
     
   </url>
   
+  <url>
+    <loc>https://luanxu.me/posts/45583/</loc>
+    
+    <lastmod>2021-09-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://luanxu.me/posts/43651/</loc>
+    
+    <lastmod>2021-09-22</lastmod>
+    
+  </url>
+  
 
   <url>
     <loc>https://luanxu.me/</loc>
@@ -82,6 +89,41 @@
   
   <url>
     <loc>https://luanxu.me/tags/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luanxu.me/tags/IOC/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luanxu.me/tags/Di/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luanxu.me/tags/Dig/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luanxu.me/tags/Wire/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luanxu.me/tags/Inject/</loc>
     <lastmod>2021-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
