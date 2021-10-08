@@ -28,6 +28,8 @@
   
 
   
+    <meta name="description" content="问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。">
+  
 
   <!-- feed -->
   
@@ -374,6 +376,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。</p>
+<span id="more"></span>
+
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>在HTTP协议中，响应头有 <code>expires</code> 或 <code>Cache-Control:max-age=XXX</code>， 前端才缓存。<br>但在浏览器中，默认会对html,js,css,字体,音视频等静态文件、以及重定向进行缓存，如果在HEAD标签中指定：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HEAD</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">META</span> <span class="attr">HTTP-EQUIV</span>=<span class="string">&quot;Pragma&quot;</span> <span class="attr">CONTENT</span>=<span class="string">&quot;no-cache&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">META</span> <span class="attr">HTTP-EQUIV</span>=<span class="string">&quot;Cache-Control&quot;</span> <span class="attr">CONTENT</span>=<span class="string">&quot;no-cache&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">META</span> <span class="attr">HTTP-EQUIV</span>=<span class="string">&quot;Expires&quot;</span> <span class="attr">CONTENT</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">HEAD</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>浏览器不会缓存html，但是还是会对重定向缓存并且这种方式并不规范，可能有的浏览器不支持。</p>
@@ -424,7 +428,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-08T02:22:18+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-08T02:28:34+00:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年10月8日</p>
@@ -447,7 +451,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://luanxu.me/posts/34951/&title=SPA重新构建部署如何刷新缓存 - 乱序的博客&summary=">
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://luanxu.me/posts/34951/&title=SPA重新构建部署如何刷新缓存 - 乱序的博客&summary=问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。">
           
             <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
@@ -455,7 +459,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://luanxu.me/posts/34951/&title=SPA重新构建部署如何刷新缓存 - 乱序的博客&summary=">
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://luanxu.me/posts/34951/&title=SPA重新构建部署如何刷新缓存 - 乱序的博客&summary=问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。">
           
             <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
@@ -463,7 +467,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://luanxu.me/posts/34951/&title=SPA重新构建部署如何刷新缓存 - 乱序的博客&summary=">
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://luanxu.me/posts/34951/&title=SPA重新构建部署如何刷新缓存 - 乱序的博客&summary=问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。">
           
             <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           

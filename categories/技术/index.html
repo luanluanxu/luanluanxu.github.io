@@ -339,11 +339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class="md">
     
-      
-        问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。
-分析在HTTP协议中，响应头有 expires 或 Cache-Control:max-age=XXX， 前端才缓存。但在浏览器中，默认会对html,js,css,字体,音视频等静态文件、以及重定向进行缓存，如果在HEAD标签中指定：
-12345&lt;...
-      
+      <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。</p>
     
   </div>
   
