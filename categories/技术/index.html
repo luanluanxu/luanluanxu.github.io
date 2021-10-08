@@ -317,9 +317,62 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class="post-wrapper">
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title">
+      <a href="/posts/34951/">
+        SPA重新构建部署如何刷新缓存
+      </a>
+    </h2>
+  
+  <div class="md">
+    
+      
+        问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。
+分析在HTTP协议中，响应头有 expires 或 Cache-Control:max-age=XXX， 前端才缓存。但在浏览器中，默认会对html,js,css,字体,音视频等静态文件、以及重定向进行缓存，如果在HEAD标签中指定：
+12345&lt;...
+      
+    
+  </div>
+  
+    <div class="meta-v3" line_style="solid">
+      <div>
+        
+          
+          <a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a>
+        
+        <time>2021-10-08</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+        
+      </div>
+      
+        <div>
+          <a class="readmore" href="/posts/34951/">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class="post-wrapper">
@@ -353,7 +406,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <time>2021-09-09</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/Golang/">Golang</a>
+          <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/">后端</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/Golang/">Golang</a>
         
       </div>
       
@@ -407,7 +460,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <time>2021-08-31</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/Golang/">Golang</a>
+          <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/">后端</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/Golang/">Golang</a>
         
       </div>
       
@@ -459,7 +512,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <time>2021-08-25</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/">JavaScript</a>
+          <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/JavaScript/">JavaScript</a>
         
       </div>
       
@@ -571,11 +624,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                         <a href="#" data-role="directory" class="flat-box">
                             <i class="fa fa-folder"></i>
                             &nbsp;
-                            Golang
+                            前端
                         </a>
-                         <ul class="entry unstyled navigation" id="tree">  <li class="file"><a href="/posts/45583/">让前端自定义查询条件和分页</a></li>  <li class="file"><a href="/posts/43651/">Go IOC 依赖注入 Dig|Wire|Inject</a></li>  </ul> 
-                    </li> 
-                    
+                         <ul class="entry unstyled navigation" id="tree"> 
                     <li class="unstyled directory">
                         <a href="#" data-role="directory" class="flat-box">
                             <i class="fa fa-folder"></i>
@@ -583,6 +634,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                             JavaScript
                         </a>
                          <ul class="entry unstyled navigation" id="tree">  <li class="file"><a href="/posts/29099/">JSON.stringify中的replacer</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/posts/34951/">SPA重新构建部署如何刷新缓存</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="unstyled directory">
+                        <a href="#" data-role="directory" class="flat-box">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            后端
+                        </a>
+                         <ul class="entry unstyled navigation" id="tree"> 
+                    <li class="unstyled directory">
+                        <a href="#" data-role="directory" class="flat-box">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Golang
+                        </a>
+                         <ul class="entry unstyled navigation" id="tree">  <li class="file"><a href="/posts/45583/">让前端自定义查询条件和分页</a></li>  <li class="file"><a href="/posts/43651/">Go IOC 依赖注入 Dig|Wire|Inject</a></li>  </ul> 
+                    </li> 
+                     </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -682,7 +753,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class="content">
-      <a href="/tags/Di/" style="font-size: 14px; color: #999">Di</a> <a href="/tags/Dig/" style="font-size: 14px; color: #999">Dig</a> <a href="/tags/Full-Stack/" style="font-size: 14px; color: #999">Full Stack</a> <a href="/tags/Gin/" style="font-size: 14px; color: #999">Gin</a> <a href="/tags/Gorm/" style="font-size: 14px; color: #999">Gorm</a> <a href="/tags/IOC/" style="font-size: 14px; color: #999">IOC</a> <a href="/tags/Inject/" style="font-size: 14px; color: #999">Inject</a> <a href="/tags/Wire/" style="font-size: 14px; color: #999">Wire</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 14px; color: #999">生活</a>
+      <a href="/tags/Di/" style="font-size: 14px; color: #999">Di</a> <a href="/tags/Dig/" style="font-size: 14px; color: #999">Dig</a> <a href="/tags/Full-Stack/" style="font-size: 14px; color: #999">Full Stack</a> <a href="/tags/Gin/" style="font-size: 14px; color: #999">Gin</a> <a href="/tags/Gorm/" style="font-size: 14px; color: #999">Gorm</a> <a href="/tags/IOC/" style="font-size: 14px; color: #999">IOC</a> <a href="/tags/Inject/" style="font-size: 14px; color: #999">Inject</a> <a href="/tags/SPA/" style="font-size: 14px; color: #999">SPA</a> <a href="/tags/Wire/" style="font-size: 14px; color: #999">Wire</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">前端优化</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98/" style="font-size: 14px; color: #999">前端缓存</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 14px; color: #999">生活</a>
     </div>
   </section>
 
