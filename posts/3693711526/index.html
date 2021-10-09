@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://luanxu.me/tags/inject/">
+  
+  <link rel="canonical" href="https://luanxu.me/posts/3693711526/">
   <!-- 渲染优化 -->
   <meta http-equiv="x-dns-prefetch-control" content="on">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -20,22 +20,26 @@
   <meta content="乱序的博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1633761681067" as="style">
+  <link rel="preload" href="/css/style.css?time=1633761680986" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>标签：Inject - 乱序的博客</title>
-  <meta name="keywords" content="luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK">
-  <meta name="description" content="keep learning">
-<meta property="og:type" content="website">
-<meta property="og:title" content="乱序的博客">
-<meta property="og:url" content="https://luanxu.me/tags/Inject/index.html">
+  <title>让前端自定义查询条件和分页 - 乱序的博客</title>
+  <meta name="keywords" content="Gorm,Gin,Full Stack,luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK">
+  <meta name="description" content="需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则  降低代码耦合度 尽量避免代码冗余  在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口 都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能 假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让前端自定义查询条件和分页">
+<meta property="og:url" content="https://luanxu.me/posts/3693711526/index.html">
 <meta property="og:site_name" content="乱序的博客">
-<meta property="og:description" content="keep learning">
+<meta property="og:description" content="需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则  降低代码耦合度 尽量避免代码冗余  在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口 都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能 假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-08-31T13:52:53.000Z">
+<meta property="article:modified_time" content="2021-10-09T02:15:21.630Z">
 <meta property="article:author" content="LuanXu">
-<meta property="article:tag" content="luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK">
+<meta property="article:tag" content="Gorm">
+<meta property="article:tag" content="Gin">
+<meta property="article:tag" content="Full Stack">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1801,8 +1805,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1633761681067" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1633761681067"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1633761680986" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1633761680986"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2379,7 +2383,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class="cover-wrapper  dock" style="display: none;">
+      <div id="none" class="cover-wrapper post dock" style="display: none;">
         
   <div class="cover-bg lazyload placeholder" style="position:fixed;" data-bg="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/background.jpg"></div>
 
@@ -2427,106 +2431,289 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class="post-wrapper">
-            <div class="post post-v3 white-box reveal shadow" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://luanxu.me/posts/2454711668/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://luanxu.me/posts/3693711526/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="乱序的博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title" itemprop="name headline">
-      <a href="/posts/2454711668/" itemprop="url">
-        Go IOC 依赖注入 Dig|Wire|Inject
-      </a>
-    </h2>
-  
-  <div class="md" itemprop="articleBody">
     
-      
-        什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）
-用大白话说就是你想实例化一个对象，但是这个对象又层层依赖其他对象，原本你需要由自己一个个去处理好...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        让前端自定义查询条件和分页
+      </h1>
+      <div class="new-meta-box">
+        
+          
+            
+<div class="new-meta-item author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class="author" href="/" rel="nofollow">
+    <img itemprop="image" src="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+    <p itemprop="name">LuanXu</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item category">
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/">后端</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/Golang/">Golang</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">技术</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/" itemprop="url"><span itemprop="name">后端</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
+      </span>
     
   </div>
-  
-    <div class="meta-v3" line_style="solid">
-      <div>
-        
-          
-          <a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg">
-            <meta itemprop="name" content="LuanXu">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-09-09T09:28:30+08:00">2021-09-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/">后端</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/Golang/">Golang</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/" itemprop="url"><span itemprop="name">后端</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-08-31T13:52:53+00:00">
+  <a class="notlink" href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月31日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><div class="story post-story"><p>作为一名后端在做Web后端业务开发时，都应该遵循以下规则</p>
+<ul>
+<li>降低代码耦合度</li>
+<li>尽量避免代码冗余</li>
+</ul>
+<p>在使用RESTFUL API风格开发时，几乎所有方法为 <code>GET</code> 的 <strong>列表或详情</strong> 接口</p>
+<p>都不可避免的需要用到 <code>分页</code>、<code>查询筛选条件</code>、<code>自定义排序</code> 的功能</p>
+<p>假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间</p>
+<span id="more"></span>
+<hr>
+</div><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><div class="story post-story"><ul>
+<li>相同的功能，代码相似度高</li>
+<li>当后端开发完成后，需要修改<code>查询筛选条件</code>时，前端无法及时反馈，需要等后端发布测试</li>
+</ul>
+<hr>
+</div><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><div class="story post-story"><p>很多后端都会将 <code>查询筛选条件</code> 、 <code>自定义排序</code> 做成参数查询</p>
+<p>但是 <code>查询筛选条件</code> 则要一个个写接收请求参数并且去调用 <em><strong>where/orwhere/like/where in…</strong></em> 等方法去挨个处理</p>
+<p>那要如何把选择权和控制权交给前端同事呢？<br>我们可以给所有接口<strong>获取列表</strong>的封装个方法</p>
+<p>在这里使用的是 <code>Gin</code>+<code>Gorm</code> 的例子，其他框架也可以使用类似操作解决这样的问题</p>
+<hr>
+<h3 id="自定义分页"><a href="#自定义分页" class="headerlink" title="自定义分页"></a>自定义分页</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Paging</span><span class="params">(c *gin.Context, db *gorm.DB)</span> <span class="params">(db *gorm.DB, err error)</span></span> &#123;</span><br><span class="line">	limitStr := c.Request.FormValue(<span class="string">&quot;limit&quot;</span>)</span><br><span class="line">    pageStr := c.Request.FormValue(<span class="string">&quot;page&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> limitStr == <span class="string">&quot;&quot;</span> || pageStr == <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> db, <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line">    limit, err := strconv.Atoi(limitStr)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> db, <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">    page, err := strconv.Atoi(pageStr)</span><br><span class="line">     <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> db, <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">    db = db.Offset((page - <span class="number">1</span>) * limit).Limit(limit)</span><br><span class="line">	<span class="keyword">return</span> db, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义排序"><a href="#自定义排序" class="headerlink" title="自定义排序"></a>自定义排序</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Sort</span><span class="params">(c *gin.Context, db *gorm.DB)</span> *<span class="title">gorm</span>.<span class="title">DB</span></span> &#123;</span><br><span class="line">	orderBy := c.Request.FormValue(<span class="string">&quot;order_by&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> orderBy == <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> db</span><br><span class="line">    &#125;</span><br><span class="line">    order := c.Request.FormValue(<span class="string">&quot;order&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> order != <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">        db = db.Order(orderBy + <span class="string">&quot; &quot;</span> + order)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        db = db.Order(orderBy + <span class="string">&quot; DESC&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> db</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="自定义查询筛选条件"><a href="#自定义查询筛选条件" class="headerlink" title="自定义查询筛选条件"></a>自定义查询筛选条件</h3><p>分页和自定义排序功能就不做解释了，做过web后端基本都了解了</p>
+<p><code>按照field_查询操作符_字段名的格式前端请求的query参数中提取并添加查询条件</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 按照field_查询操作符_字段名的格式前端请求的query参数中提取并添加查询条件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ConditionSupport</span><span class="params">(c *gin.Context, db *gorm.DB)</span> <span class="params">(*gorm.DB, error)</span></span> &#123;</span><br><span class="line">	query, err := url.ParseQuery(c.Request.URL.RawQuery)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, errors.New(<span class="string">&quot;请求参数不正确，请联系管理员进行处理&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// 找出所有带有field开头的，并且字符串长度大于9的query参数</span></span><br><span class="line">	<span class="keyword">for</span> name, value := <span class="keyword">range</span> query &#123;</span><br><span class="line">        <span class="keyword">if</span> !strings.HasPrfix(name, <span class="string">&quot;field&quot;</span>) || <span class="built_in">len</span>(name) &lt;= <span class="number">9</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> db,<span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line">        fieldName := name[<span class="number">9</span>:]</span><br><span class="line">        <span class="comment">//取出操作符</span></span><br><span class="line">        opt := name[<span class="number">6</span>:<span class="number">8</span>]</span><br><span class="line">        <span class="keyword">switch</span> opt &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;eq&quot;</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(value) == <span class="number">1</span> &#123;</span><br><span class="line">                db = db.Where(fieldName+<span class="string">&quot;=?&quot;</span>, value[<span class="number">0</span>])</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                db = db.Where(fieldName+<span class="string">&quot; IN (?)&quot;</span>, value)</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;ne&quot;</span>:</span><br><span class="line">            db = db.Where(fieldName+<span class="string">&quot;&lt;&gt;?&quot;</span>, value[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;lt&quot;</span>:</span><br><span class="line">            db = db.Where(fieldName+<span class="string">&quot;&lt;?&quot;</span>, value[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;le&quot;</span>:</span><br><span class="line">            db = db.Where(fieldName+<span class="string">&quot;&lt;=?&quot;</span>, value[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;gt&quot;</span>:</span><br><span class="line">            db = db.Where(fieldName+<span class="string">&quot;&gt;?&quot;</span>, value[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;ge&quot;</span>:</span><br><span class="line">            db = db.Where(fieldName+<span class="string">&quot;&gt;=?&quot;</span>, value[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;lk&quot;</span>:</span><br><span class="line">            db = db.Where(fieldName+<span class="string">&quot; LIKE ?&quot;</span>, <span class="string">&quot;%&quot;</span>+value[<span class="number">0</span>]+<span class="string">&quot;%&quot;</span>)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nil</span>, errors.New(<span class="string">&quot;不支持的条件查询操作&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> db, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结合三种方法一起使用"><a href="#结合三种方法一起使用" class="headerlink" title="结合三种方法一起使用"></a>结合三种方法一起使用</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Find</span><span class="params">(c *gin.Context, db *gorm.DB, result *<span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">int64</span>, error)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> count <span class="keyword">int64</span></span><br><span class="line">	err := c.Request.ParseForm()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>, errors.New(<span class="string">&quot;参数不正确&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// 添加自定义查询条件</span></span><br><span class="line">	db, err = ConditionSupport(c, db)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>, errors.New(<span class="string">&quot;查询条件有误&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// 添加分页支持</span></span><br><span class="line">	db, err = Paging(c, db)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>, errors.New(<span class="string">&quot;分页参数不正确&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	err = db.Count(&amp;count).Error</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>, errors.New(<span class="string">&quot;数据库记录统计失败，请稍后再试&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// 添加自定义排序</span></span><br><span class="line">	err = Sort(c, db).Find(result).Error</span><br><span class="line">	<span class="keyword">return</span> count, errors.New(<span class="string">&quot;数据库记录查询失败，请稍后再试&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后我们只需要给每个需要 <code>分页</code>、<code>查询筛选条件</code>、<code>自定义排序</code> 的地方使用Find函数便可以将操作权交给前端了</p>
+
+</div>
+  </div>
+  
+  
+    
+    <div class="footer">
       
-        <div>
-          <a class="readmore" href="/posts/2454711668/" itemprop="url">
-            阅读全文
-          </a>
+      
+      
+        <div class="copyright">
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href="https://luanxu.me/posts/3693711526/">https://luanxu.me/posts/3693711526/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class="article-meta" id="bottom">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-09T02:15:21+00:00">
+  <a class="notlink" href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年10月9日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Gorm/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Gorm</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Gin/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Gin</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Full-Stack/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Full Stack</p></a></div>
+  <span hidden itemprop="keywords">Gorm Gin Full Stack</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://luanxu.me/posts/3693711526/&title=让前端自定义查询条件和分页 - 乱序的博客&summary=需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则
+
+降低代码耦合度
+尽量避免代码冗余
+
+在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口
+都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能
+假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://luanxu.me/posts/3693711526/&title=让前端自定义查询条件和分页 - 乱序的博客&summary=需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则
+
+降低代码耦合度
+尽量避免代码冗余
+
+在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口
+都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能
+假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://luanxu.me/posts/3693711526/&title=让前端自定义查询条件和分页 - 乱序的博客&summary=需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则
+
+降低代码耦合度
+尽量避免代码冗余
+
+在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口
+都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能
+假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class="prev" href="/posts/2682818460/">
+          <p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>为什么人要上学上班呢？</p>
+          <p class="content">你喜欢夏天，是因为有冬天你喜欢冬天，是因为有夏天
+你必须得上学，上班，学习，这些令你辛苦的东西你才能知道玩耍是多么开心快乐的一件事如果你每天都在玩耍，你就体会不到玩耍的快乐
+所以当你身陷恋爱之中...</p>
+        </a>
+      
+      
+        <a class="next" href="/posts/1232104679/">
+          <p class="title">JSON.stringify中的replacer<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class="content">需求分析当我们在遇到需要深拷贝一个对象所有属性的时候会想把关联的数据排除在外，例如这样的一个对象关联的send_by_user
+当你的需求是修改这个庞大对象并且整体提交更新的时候会发现以下问题
+...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/posts/3693711526/index.html#comments">
+    </span>
+    <p ct><i class="fas fa-comments"></i> 评论</p>
+    
+    
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
 
 
-    
-  
+
+
+
 </div>
 <aside id="l_side" itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2534,52 +2721,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class="content">
-    
-      
-        <a class="avatar flat-box rectangle" href="/about/">
-          <img no-lazy src="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" alt="This is a picture without description" >
-        </a>
-      
-    
-    
-      <div class="text">
-        
-          <h2>乱序</h2>
-        
-        
-          <p>Write like nobody’s reading.</p>
 
-        
-        
-      </div>
+
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div">
     
+  <header>
     
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:dmail.yui@gmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/luanluanxu/" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span>
     
-  </div>
-</section>
+  </header>
+
+
+    <div class="content">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">需求分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86%E9%A1%B5"><span class="toc-text">自定义分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%92%E5%BA%8F"><span class="toc-text">自定义排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9F%A5%E8%AF%A2%E7%AD%9B%E9%80%89%E6%9D%A1%E4%BB%B6"><span class="toc-text">自定义查询筛选条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E5%90%88%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8"><span class="toc-text">结合三种方法一起使用</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2601,7 +2757,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
       
        <ul class="entry unstyled navigation level1" id="tree" style="display: block;"> 
-                  <li class="unstyled directory">
+                  <li class="unstyled directory open">
                       <a href="#" data-role="directory" class="flat-box">
                           <i class="fa fa-folder-open"></i>
                           &nbsp;
@@ -2626,20 +2782,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                    <li class="file"><a href="/posts/3130060804/" title="SPA重新构建部署如何刷新缓存">SPA重新构建部署如何刷新缓存</a></li>  </ul> 
                   </li> 
                   
-                  <li class="unstyled directory">
+                  <li class="unstyled directory open">
                       <a href="#" data-role="directory" class="flat-box">
                           <i class="fa fa-folder-open"></i>
                           &nbsp;
                           后端 (2)
                       </a>
                        <ul class="entry unstyled navigation level3" id="tree" style="display: block;"> 
-                  <li class="unstyled directory">
+                  <li class="unstyled directory open">
                       <a href="#" data-role="directory" class="flat-box">
                           <i class="fa fa-folder-open"></i>
                           &nbsp;
                           Golang (2)
                       </a>
-                       <ul class="entry unstyled navigation level4" id="tree" style="display: block;">  <li class="file"><a href="/posts/3693711526/" title="让前端自定义查询条件和分页">让前端自定义查询条件和分页</a></li>  <li class="file"><a href="/posts/2454711668/" title="Go IOC 依赖注入 Dig|Wire|Inject">Go IOC 依赖注入 Dig|Wire|Inject</a></li>  </ul> 
+                       <ul class="entry unstyled navigation level4" id="tree" style="display: block;">  <li class="file active"><a href="/posts/3693711526/" title="让前端自定义查询条件和分页">让前端自定义查询条件和分页</a></li>  <li class="file"><a href="/posts/2454711668/" title="Go IOC 依赖注入 Dig|Wire|Inject">Go IOC 依赖注入 Dig|Wire|Inject</a></li>  </ul> 
                   </li> 
                    </ul> 
                   </li> 
@@ -2789,32 +2945,12 @@ Element.prototype.siblings = function(tagName){
     </style>
   
 
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href="/blog/tags/"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
-    
-  </header>
-
-
-    <div class="content">
-      <a href="/tags/Di/" style="font-size: 14px; color: #999">Di</a> <a href="/tags/Dig/" style="font-size: 14px; color: #999">Dig</a> <a href="/tags/Full-Stack/" style="font-size: 14px; color: #999">Full Stack</a> <a href="/tags/Gin/" style="font-size: 14px; color: #999">Gin</a> <a href="/tags/Gorm/" style="font-size: 14px; color: #999">Gorm</a> <a href="/tags/IOC/" style="font-size: 14px; color: #999">IOC</a> <a href="/tags/Inject/" style="font-size: 14px; color: #999">Inject</a> <a href="/tags/SPA/" style="font-size: 14px; color: #999">SPA</a> <a href="/tags/Wire/" style="font-size: 14px; color: #999">Wire</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">前端优化</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98/" style="font-size: 14px; color: #999">前端缓存</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 14px; color: #999">生活</a>
-    </div>
-  </section>
-
-
-  
-
-  
-
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2843,14 +2979,15 @@ Element.prototype.siblings = function(tagName){
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="让前端自定义查询条件和分页";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2964,8 +3101,8 @@ Element.prototype.siblings = function(tagName){
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1633761681067')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761681067', () => {
+      volantis.css('/css/message.css?time=1633761680986')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761680986', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3010,8 +3147,8 @@ Element.prototype.siblings = function(tagName){
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1633761681067')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761681067', () => {
+      volantis.css('/css/message.css?time=1633761680986')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761680986', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3070,8 +3207,8 @@ Element.prototype.siblings = function(tagName){
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1633761681067')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761681067', () => {
+      volantis.css('/css/message.css?time=1633761680986')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761680986', () => {
         hideMessage(done);
       });
     } else {
@@ -3254,7 +3391,7 @@ Element.prototype.siblings = function(tagName){
     
       volantis.APlayerController = {};
     
-    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1633761681067')
+    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1633761680986')
   </script>
 
 
@@ -3367,19 +3504,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1633761681067")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1633761680986")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1633761681067")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1633761680986")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1633761681067")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1633761680986")
       }
     
   };
@@ -3495,7 +3632,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1633761681067.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1633761680986.js"></script>
 
 
 <!-- optional -->
@@ -3508,7 +3645,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1633761681067");
+    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1633761680986");
   }
 
   function loadSearchService() {
@@ -3755,7 +3892,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","sameAs":["https://github.com/volantis-x"],"description":"keep learning"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://luanxu.me/","name":"乱序的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/tags/Inject/","name":"Inject"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"乱序的博客","url":"https://luanxu.me/","keywords":"luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK","description":"keep learning","author":{"@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","description":"keep learning"},"publisher":{"@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://luanxu.me?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","sameAs":["https://github.com/volantis-x"],"description":"keep learning"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://luanxu.me/","name":"乱序的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/","name":"技术"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/","name":"后端"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/Golang/","name":"Golang"}},{"@type":"ListItem","position":3,"item":{"@id":"https://luanxu.me/posts/3693711526/","name":"让前端自定义查询条件和分页"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"让前端自定义查询条件和分页","description":"需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则\n\n降低代码耦合度\n尽量避免代码冗余\n\n在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口\n都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能\n假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间","datePublished":"2021-08-31T13:52:53.000Z","dateModified":"2021-10-09T02:15:21.630Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://luanxu.me/posts/3693711526/"},"author":{"@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/"},"publisher":{"@type":"Organization","name":"乱序的博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://luanxu.me/posts/3693711526/","wordCount":155,"articleSection":"技术","keywords":"Gorm,Gin,Full Stack","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

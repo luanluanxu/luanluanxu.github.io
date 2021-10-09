@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://luanxu.me/tags/inject/">
+  
+  <link rel="canonical" href="https://luanxu.me/posts/3130060804/">
   <!-- 渲染优化 -->
   <meta http-equiv="x-dns-prefetch-control" content="on">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -20,22 +20,26 @@
   <meta content="乱序的博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1633761681067" as="style">
+  <link rel="preload" href="/css/style.css?time=1633761680975" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>标签：Inject - 乱序的博客</title>
-  <meta name="keywords" content="luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK">
-  <meta name="description" content="keep learning">
-<meta property="og:type" content="website">
-<meta property="og:title" content="乱序的博客">
-<meta property="og:url" content="https://luanxu.me/tags/Inject/index.html">
+  <title>SPA重新构建部署如何刷新缓存 - 乱序的博客</title>
+  <meta name="keywords" content="SPA,前端缓存,前端优化,luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK">
+  <meta name="description" content="问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SPA重新构建部署如何刷新缓存">
+<meta property="og:url" content="https://luanxu.me/posts/3130060804/index.html">
 <meta property="og:site_name" content="乱序的博客">
-<meta property="og:description" content="keep learning">
+<meta property="og:description" content="问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-10-08T01:55:09.000Z">
+<meta property="article:modified_time" content="2021-10-09T02:15:21.623Z">
 <meta property="article:author" content="LuanXu">
-<meta property="article:tag" content="luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK">
+<meta property="article:tag" content="SPA">
+<meta property="article:tag" content="前端缓存">
+<meta property="article:tag" content="前端优化">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1801,8 +1805,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1633761681067" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1633761681067"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1633761680975" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1633761680975"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2379,7 +2383,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class="cover-wrapper  dock" style="display: none;">
+      <div id="none" class="cover-wrapper post dock" style="display: none;">
         
   <div class="cover-bg lazyload placeholder" style="position:fixed;" data-bg="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/background.jpg"></div>
 
@@ -2427,106 +2431,243 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class="post-wrapper">
-            <div class="post post-v3 white-box reveal shadow" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://luanxu.me/posts/2454711668/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://luanxu.me/posts/3130060804/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="乱序的博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title" itemprop="name headline">
-      <a href="/posts/2454711668/" itemprop="url">
-        Go IOC 依赖注入 Dig|Wire|Inject
-      </a>
-    </h2>
-  
-  <div class="md" itemprop="articleBody">
     
-      
-        什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）
-用大白话说就是你想实例化一个对象，但是这个对象又层层依赖其他对象，原本你需要由自己一个个去处理好...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        SPA重新构建部署如何刷新缓存
+      </h1>
+      <div class="new-meta-box">
+        
+          
+            
+<div class="new-meta-item author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class="author" href="/" rel="nofollow">
+    <img itemprop="image" src="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+    <p itemprop="name">LuanXu</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item category">
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/">前端</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">技术</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
+      </span>
     
   </div>
-  
-    <div class="meta-v3" line_style="solid">
-      <div>
-        
-          
-          <a class="avatar" href="/"><img src="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg">
-            <meta itemprop="name" content="LuanXu">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-09-09T09:28:30+08:00">2021-09-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/">后端</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/Golang/">Golang</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/" itemprop="url"><span itemprop="name">后端</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-10-08T01:55:09+00:00">
+  <a class="notlink" href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年10月8日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><div class="story post-story"><p>单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。</p>
+<span id="more"></span>
+
+</div><h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><div class="story post-story"><p>在HTTP协议中，响应头有 <code>expires</code> 或 <code>Cache-Control:max-age=XXX</code>， 前端才缓存。<br>但在浏览器中，默认会对html,js,css,字体,音视频等静态文件、以及重定向进行缓存，如果在HEAD标签中指定：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HEAD</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">META</span> <span class="attr">HTTP-EQUIV</span>=<span class="string">&quot;Pragma&quot;</span> <span class="attr">CONTENT</span>=<span class="string">&quot;no-cache&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">META</span> <span class="attr">HTTP-EQUIV</span>=<span class="string">&quot;Cache-Control&quot;</span> <span class="attr">CONTENT</span>=<span class="string">&quot;no-cache&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">META</span> <span class="attr">HTTP-EQUIV</span>=<span class="string">&quot;Expires&quot;</span> <span class="attr">CONTENT</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">HEAD</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>浏览器不会缓存html，但是还是会对重定向缓存并且这种方式并不规范，可能有的浏览器不支持。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol>
+<li>对hash过的静态文件还是采用默认方式，客户端会缓存。</li>
+<li>对html文件，返回时增加头：Cache-Control，必须每次来服务端校验，根据 <code>ETAG</code> 返回200或者304</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前端html文件</span></span><br><span class="line">    location / &#123;</span><br><span class="line">        add_header Cache-Control <span class="string">&#x27;no-cache, must-revalidate, proxy-revalidate, max-age=0&#x27;</span>;</span><br><span class="line"></span><br><span class="line">        root <span class="regexp">/var/</span>www<span class="regexp">/example/</span>dist/;</span><br><span class="line">        index index.html index.htm;</span><br><span class="line">        try_files <span class="variable">$uri</span> /index.html;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+</div><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><div class="story post-story"><blockquote>
+<ul>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/ETag">ETAG - MDN</a></li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">Cache-Control - RFC2616</a></li>
+</ul>
+</blockquote>
+
+</div>
+  </div>
+  
+  
+    
+    <div class="footer">
       
-        <div>
-          <a class="readmore" href="/posts/2454711668/" itemprop="url">
-            阅读全文
-          </a>
+      
+      
+        <div class="copyright">
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href="https://luanxu.me/posts/3130060804/">https://luanxu.me/posts/3130060804/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class="article-meta" id="bottom">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-09T02:15:21+00:00">
+  <a class="notlink" href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年10月9日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/SPA/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>SPA</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>前端缓存</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>前端优化</p></a></div>
+  <span hidden itemprop="keywords">SPA 前端缓存 前端优化</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://luanxu.me/posts/3130060804/&title=SPA重新构建部署如何刷新缓存 - 乱序的博客&summary=问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。">
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://luanxu.me/posts/3130060804/&title=SPA重新构建部署如何刷新缓存 - 乱序的博客&summary=问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。">
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://luanxu.me/posts/3130060804/&title=SPA重新构建部署如何刷新缓存 - 乱序的博客&summary=问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。">
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class="next" href="/posts/2454711668/">
+          <p class="title">Go IOC 依赖注入 Dig|Wire|Inject<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class="content">什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependen...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/posts/3130060804/index.html#comments">
+    </span>
+    <p ct><i class="fas fa-comments"></i> 评论</p>
+    
+    
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
 
 
-    
-  
+
+
+
 </div>
 <aside id="l_side" itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2534,52 +2675,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class="content">
-    
-      
-        <a class="avatar flat-box rectangle" href="/about/">
-          <img no-lazy src="https://cdn.jsdelivr.net/gh/luanluanxu/assets@master/images/avatar.jpg" alt="This is a picture without description" >
-        </a>
-      
-    
-    
-      <div class="text">
-        
-          <h2>乱序</h2>
-        
-        
-          <p>Write like nobody’s reading.</p>
 
-        
-        
-      </div>
+
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div">
     
+  <header>
     
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:dmail.yui@gmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/luanluanxu/" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span>
     
-  </div>
-</section>
+  </header>
+
+
+    <div class="content">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2601,14 +2711,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
       
        <ul class="entry unstyled navigation level1" id="tree" style="display: block;"> 
-                  <li class="unstyled directory">
+                  <li class="unstyled directory open">
                       <a href="#" data-role="directory" class="flat-box">
                           <i class="fa fa-folder-open"></i>
                           &nbsp;
                           技术 (4)
                       </a>
                        <ul class="entry unstyled navigation level2" id="tree" style="display: block;"> 
-                  <li class="unstyled directory">
+                  <li class="unstyled directory open">
                       <a href="#" data-role="directory" class="flat-box">
                           <i class="fa fa-folder-open"></i>
                           &nbsp;
@@ -2623,7 +2733,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       </a>
                        <ul class="entry unstyled navigation level4" id="tree" style="display: block;">  <li class="file"><a href="/posts/1232104679/" title="JSON.stringify中的replacer">JSON.stringify中的replacer</a></li>  </ul> 
                   </li> 
-                   <li class="file"><a href="/posts/3130060804/" title="SPA重新构建部署如何刷新缓存">SPA重新构建部署如何刷新缓存</a></li>  </ul> 
+                   <li class="file active"><a href="/posts/3130060804/" title="SPA重新构建部署如何刷新缓存">SPA重新构建部署如何刷新缓存</a></li>  </ul> 
                   </li> 
                   
                   <li class="unstyled directory">
@@ -2789,32 +2899,12 @@ Element.prototype.siblings = function(tagName){
     </style>
   
 
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href="/blog/tags/"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
-    
-  </header>
-
-
-    <div class="content">
-      <a href="/tags/Di/" style="font-size: 14px; color: #999">Di</a> <a href="/tags/Dig/" style="font-size: 14px; color: #999">Dig</a> <a href="/tags/Full-Stack/" style="font-size: 14px; color: #999">Full Stack</a> <a href="/tags/Gin/" style="font-size: 14px; color: #999">Gin</a> <a href="/tags/Gorm/" style="font-size: 14px; color: #999">Gorm</a> <a href="/tags/IOC/" style="font-size: 14px; color: #999">IOC</a> <a href="/tags/Inject/" style="font-size: 14px; color: #999">Inject</a> <a href="/tags/SPA/" style="font-size: 14px; color: #999">SPA</a> <a href="/tags/Wire/" style="font-size: 14px; color: #999">Wire</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">前端优化</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98/" style="font-size: 14px; color: #999">前端缓存</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 14px; color: #999">生活</a>
-    </div>
-  </section>
-
-
-  
-
-  
-
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2843,14 +2933,15 @@ Element.prototype.siblings = function(tagName){
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="SPA重新构建部署如何刷新缓存";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2964,8 +3055,8 @@ Element.prototype.siblings = function(tagName){
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1633761681067')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761681067', () => {
+      volantis.css('/css/message.css?time=1633761680975')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761680975', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3010,8 +3101,8 @@ Element.prototype.siblings = function(tagName){
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1633761681067')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761681067', () => {
+      volantis.css('/css/message.css?time=1633761680975')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761680975', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3070,8 +3161,8 @@ Element.prototype.siblings = function(tagName){
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1633761681067')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761681067', () => {
+      volantis.css('/css/message.css?time=1633761680975')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1633761680975', () => {
         hideMessage(done);
       });
     } else {
@@ -3254,7 +3345,7 @@ Element.prototype.siblings = function(tagName){
     
       volantis.APlayerController = {};
     
-    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1633761681067')
+    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1633761680975')
   </script>
 
 
@@ -3367,19 +3458,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1633761681067")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1633761680975")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1633761681067")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1633761680975")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1633761681067")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1633761680975")
       }
     
   };
@@ -3495,7 +3586,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1633761681067.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1633761680975.js"></script>
 
 
 <!-- optional -->
@@ -3508,7 +3599,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1633761681067");
+    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1633761680975");
   }
 
   function loadSearchService() {
@@ -3755,7 +3846,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","sameAs":["https://github.com/volantis-x"],"description":"keep learning"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://luanxu.me/","name":"乱序的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/tags/Inject/","name":"Inject"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"乱序的博客","url":"https://luanxu.me/","keywords":"luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK","description":"keep learning","author":{"@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","description":"keep learning"},"publisher":{"@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://luanxu.me?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","sameAs":["https://github.com/volantis-x"],"description":"keep learning"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://luanxu.me/","name":"乱序的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/","name":"技术"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/前端/","name":"前端"}},{"@type":"ListItem","position":3,"item":{"@id":"https://luanxu.me/posts/3130060804/","name":"SPA重新构建部署如何刷新缓存"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"SPA重新构建部署如何刷新缓存","description":"问题单页面应用在重新部署更新时，此时正在浏览网页，并且已经在网页内的用户，始终会使用老的js与css文件，一直在使用已经缓存了的静态资源。","datePublished":"2021-10-08T01:55:09.000Z","dateModified":"2021-10-09T02:15:21.623Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://luanxu.me/posts/3130060804/"},"author":{"@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/"},"publisher":{"@type":"Organization","name":"乱序的博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://luanxu.me/posts/3130060804/","wordCount":69,"articleSection":"技术","keywords":"SPA,前端缓存,前端优化","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
