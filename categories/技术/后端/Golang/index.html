@@ -20,7 +20,7 @@
   <meta content="乱序的博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1636687450816" as="style">
+  <link rel="preload" href="/css/style.css?time=1636687790279" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
@@ -1801,8 +1801,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1636687450816" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1636687450816"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1636687790279" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1636687790279"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2468,10 +2468,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class="md" itemprop="articleBody">
     
-      
-        什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）
-用大白话说就是你想实例化一个对象，但是这个对象又层层依赖其他对象，原本你需要由自己一个个去处理好...
-      
+      <h2 id="什么是控制反转-IOC"><a href="#什么是控制反转-IOC" class="headerlink" title="什么是控制反转(IOC)?"></a>什么是控制反转(IOC)?</h2><p>Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）</p>
     
   </div>
   
@@ -2549,9 +2546,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>降低代码耦合度</li>
 <li>尽量避免代码冗余</li>
 </ul>
-<p>在使用RESTFUL API风格开发时，几乎所有方法为 <code>GET</code> 的 <strong>列表或详情</strong> 接口</p>
-<p>都不可避免的需要用到 <code>分页</code>、<code>查询筛选条件</code>、<code>自定义排序</code> 的功能</p>
-<p>假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间</p>
     
   </div>
   
@@ -3042,8 +3036,8 @@ Element.prototype.siblings = function(tagName){
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636687450816')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687450816', () => {
+      volantis.css('/css/message.css?time=1636687790279')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687790279', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3088,8 +3082,8 @@ Element.prototype.siblings = function(tagName){
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636687450816')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687450816', () => {
+      volantis.css('/css/message.css?time=1636687790279')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687790279', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3148,8 +3142,8 @@ Element.prototype.siblings = function(tagName){
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636687450816')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687450816', () => {
+      volantis.css('/css/message.css?time=1636687790279')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687790279', () => {
         hideMessage(done);
       });
     } else {
@@ -3372,7 +3366,7 @@ Element.prototype.siblings = function(tagName){
     
     
     
-    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1636687450816')
+    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1636687790279')
   </script>
 
 
@@ -3485,19 +3479,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1636687450816")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1636687790279")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1636687450816")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1636687790279")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1636687450816")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1636687790279")
       }
     
   };
@@ -3569,7 +3563,7 @@ volantis.pjax.push(bindToggleButton);
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/aplayer.js?time=1636687450818')
+    await volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/aplayer.js?time=1636687790280')
     volantis.APlayerController.music = true;
   
   })();
@@ -3703,7 +3697,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1636687450816.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1636687790279.js"></script>
 
 
 <!-- optional -->
@@ -3716,7 +3710,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1636687450816");
+    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1636687790279");
   }
 
   function loadSearchService() {

@@ -20,22 +20,22 @@
   <meta content="乱序的博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1636687450764" as="style">
+  <link rel="preload" href="/css/style.css?time=1636687790236" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>Go IOC 依赖注入 Dig|Wire|Inject - 乱序的博客</title>
   <meta name="keywords" content="IOC,Di,Dig,Wire,Inject,luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK">
-  <meta name="description" content="什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup） 用大白话说就是你想实例化一个对象，但是这个对象又层层依赖其他对象，原本你需要由自己一个个去处理好这些对">
+  <meta name="description" content="什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go IOC 依赖注入 Dig|Wire|Inject">
 <meta property="og:url" content="https://luanxu.me/posts/2454711668/index.html">
 <meta property="og:site_name" content="乱序的博客">
-<meta property="og:description" content="什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup） 用大白话说就是你想实例化一个对象，但是这个对象又层层依赖其他对象，原本你需要由自己一个个去处理好这些对">
+<meta property="og:description" content="什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-09-09T01:28:30.000Z">
-<meta property="article:modified_time" content="2021-10-09T02:15:21.634Z">
+<meta property="article:modified_time" content="2021-11-12T03:29:44.230Z">
 <meta property="article:author" content="LuanXu">
 <meta property="article:tag" content="IOC">
 <meta property="article:tag" content="Di">
@@ -1807,8 +1807,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1636687450764" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1636687450764"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1636687790236" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1636687790236"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2516,6 +2516,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <h2 id="什么是控制反转-IOC"><a href="#什么是控制反转-IOC" class="headerlink" title="什么是控制反转(IOC)?"></a>什么是控制反转(IOC)?</h2><div class="story post-story"><p>Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）</p>
+<span id="more"></span>
+
 <p>用大白话说就是你想实例化一个对象，但是这个对象又层层依赖其他对象，原本你需要由自己一个个去处理好这些对象间的依赖关系，现在可以解放双手交给IOC框架自己去处理了，不需要自己每次都去写实例化部分的代码了</p>
 </div><h2 id="无IOC的例子"><a href="#无IOC的例子" class="headerlink" title="无IOC的例子"></a>无IOC的例子</h2><div class="story post-story"><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line">	<span class="string">&quot;gorm.io/driver/mysql&quot;</span></span><br><span class="line">	<span class="string">&quot;gorm.io/gorm&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> MysqlConfig <span class="keyword">struct</span> &#123;</span><br><span class="line">	Dsn     <span class="keyword">string</span></span><br><span class="line">	MaxIdle <span class="keyword">int</span></span><br><span class="line">	MaxOpen <span class="keyword">int</span></span><br><span class="line">	MaxLife <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> DataSourceType <span class="keyword">struct</span> &#123;</span><br><span class="line">	DB *gorm.DB</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> DataSource *DataSourceType</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// no ioc</span></span><br><span class="line">	mysqlConfig := &amp;MysqlConfig&#123;</span><br><span class="line">		Dsn: <span class="string">&quot;dsn&quot;</span>,</span><br><span class="line">	&#125;</span><br><span class="line">	gormDb, err := gorm.Open(mysql.New(mysql.Config&#123;</span><br><span class="line">		DSN: mysqlConfig.Dsn,</span><br><span class="line">	&#125;), &amp;gorm.Config&#123;SkipDefaultTransaction: <span class="literal">true</span>&#125;)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Errorf(<span class="string">&quot;Db init error : %s&quot;</span>, err.Error())</span><br><span class="line">	&#125;</span><br><span class="line">	DataSource = &amp;DataSourceType&#123;</span><br><span class="line">		DB: gormDb,</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> userCount <span class="keyword">int64</span></span><br><span class="line">	<span class="keyword">if</span> err := DataSource.DB.Table(<span class="string">&quot;user&quot;</span>).Count(&amp;userCount).Error; err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;User count error&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;no ioc User count: %v&quot;</span>, userCount)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ go <span class="builtin-name">run</span> ioc.go</span><br><span class="line"><span class="literal">no</span> ioc<span class="built_in"> User </span>count: 12</span><br></pre></td></tr></table></figure>
@@ -2567,10 +2569,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-09T02:15:21+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-12T03:29:44+00:00">
   <a class="notlink" href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月9日</p>
+    <p>更新于：2021年11月12日</p>
   </a>
 </div>
 
@@ -2591,7 +2593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://luanxu.me/posts/2454711668/&title=Go IOC 依赖注入 Dig|Wire|Inject - 乱序的博客&summary=">
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://luanxu.me/posts/2454711668/&title=Go IOC 依赖注入 Dig|Wire|Inject - 乱序的博客&summary=什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）">
           
             <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
           
@@ -2599,7 +2601,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://luanxu.me/posts/2454711668/&title=Go IOC 依赖注入 Dig|Wire|Inject - 乱序的博客&summary=">
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://luanxu.me/posts/2454711668/&title=Go IOC 依赖注入 Dig|Wire|Inject - 乱序的博客&summary=什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）">
           
             <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
           
@@ -2607,7 +2609,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://luanxu.me/posts/2454711668/&title=Go IOC 依赖注入 Dig|Wire|Inject - 乱序的博客&summary=">
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://luanxu.me/posts/2454711668/&title=Go IOC 依赖注入 Dig|Wire|Inject - 乱序的博客&summary=什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）">
           
             <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
           
@@ -2654,8 +2656,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 降低代码耦合度
 尽量避免代码冗余
 
-在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口
-都不...</p>
+
+
+
+在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口...</p>
         </a>
       
     </div>
@@ -3068,8 +3072,8 @@ Element.prototype.siblings = function(tagName){
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636687450764')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687450764', () => {
+      volantis.css('/css/message.css?time=1636687790236')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687790236', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3114,8 +3118,8 @@ Element.prototype.siblings = function(tagName){
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636687450764')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687450764', () => {
+      volantis.css('/css/message.css?time=1636687790236')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687790236', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3174,8 +3178,8 @@ Element.prototype.siblings = function(tagName){
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636687450764')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687450764', () => {
+      volantis.css('/css/message.css?time=1636687790236')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687790236', () => {
         hideMessage(done);
       });
     } else {
@@ -3398,7 +3402,7 @@ Element.prototype.siblings = function(tagName){
     
     
     
-    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1636687450764')
+    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1636687790236')
   </script>
 
 
@@ -3511,19 +3515,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1636687450764")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1636687790236")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1636687450764")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1636687790236")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1636687450764")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1636687790236")
       }
     
   };
@@ -3595,7 +3599,7 @@ volantis.pjax.push(bindToggleButton);
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/aplayer.js?time=1636687450766')
+    await volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/aplayer.js?time=1636687790238')
     volantis.APlayerController.music = true;
   
   })();
@@ -3729,7 +3733,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1636687450764.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1636687790236.js"></script>
 
 
 <!-- optional -->
@@ -3742,7 +3746,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1636687450764");
+    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1636687790236");
   }
 
   function loadSearchService() {
@@ -3989,7 +3993,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","sameAs":["https://github.com/volantis-x"],"description":"keep learning"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://luanxu.me/","name":"乱序的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/","name":"技术"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/","name":"后端"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/Golang/","name":"Golang"}},{"@type":"ListItem","position":3,"item":{"@id":"https://luanxu.me/posts/2454711668/","name":"Go IOC 依赖注入 Dig|Wire|Inject"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Go IOC 依赖注入 Dig|Wire|Inject","description":"","datePublished":"2021-09-09T01:28:30.000Z","dateModified":"2021-10-09T02:15:21.634Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://luanxu.me/posts/2454711668/"},"author":{"@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/"},"publisher":{"@type":"Organization","name":"乱序的博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://luanxu.me/posts/2454711668/","wordCount":0,"articleSection":"技术","keywords":"IOC,Di,Dig,Wire,Inject","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","sameAs":["https://github.com/volantis-x"],"description":"keep learning"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://luanxu.me/","name":"乱序的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/","name":"技术"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/","name":"后端"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/Golang/","name":"Golang"}},{"@type":"ListItem","position":3,"item":{"@id":"https://luanxu.me/posts/2454711668/","name":"Go IOC 依赖注入 Dig|Wire|Inject"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Go IOC 依赖注入 Dig|Wire|Inject","description":"什么是控制反转(IOC)?Inversion of Control (IoC) 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称DI），还有一种方式叫“依赖查找”（Dependency Lookup）","datePublished":"2021-09-09T01:28:30.000Z","dateModified":"2021-11-12T03:29:44.230Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://luanxu.me/posts/2454711668/"},"author":{"@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/"},"publisher":{"@type":"Organization","name":"乱序的博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://luanxu.me/posts/2454711668/","wordCount":148,"articleSection":"技术","keywords":"IOC,Di,Dig,Wire,Inject","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

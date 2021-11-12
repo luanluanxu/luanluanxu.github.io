@@ -20,22 +20,22 @@
   <meta content="乱序的博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1636687450767" as="style">
+  <link rel="preload" href="/css/style.css?time=1636687790239" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>让前端自定义查询条件和分页 - 乱序的博客</title>
   <meta name="keywords" content="Gorm,Gin,Full Stack,luanxu 乱序 SofewareEngineer GOPHER GOLANG TYPESCRIPT VUE VUE3 FULLSTACK">
-  <meta name="description" content="需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则  降低代码耦合度 尽量避免代码冗余  在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口 都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能 假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
+  <meta name="description" content="需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则  降低代码耦合度 尽量避免代码冗余">
 <meta property="og:type" content="article">
 <meta property="og:title" content="让前端自定义查询条件和分页">
 <meta property="og:url" content="https://luanxu.me/posts/3693711526/index.html">
 <meta property="og:site_name" content="乱序的博客">
-<meta property="og:description" content="需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则  降低代码耦合度 尽量避免代码冗余  在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口 都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能 假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
+<meta property="og:description" content="需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则  降低代码耦合度 尽量避免代码冗余">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-08-31T13:52:53.000Z">
-<meta property="article:modified_time" content="2021-11-12T03:24:03.721Z">
+<meta property="article:modified_time" content="2021-11-12T03:29:44.230Z">
 <meta property="article:author" content="LuanXu">
 <meta property="article:tag" content="Gorm">
 <meta property="article:tag" content="Gin">
@@ -1805,8 +1805,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1636687450767" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1636687450767"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1636687790239" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1636687790239"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2518,10 +2518,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>降低代码耦合度</li>
 <li>尽量避免代码冗余</li>
 </ul>
+<span id="more"></span>
+
+
 <p>在使用RESTFUL API风格开发时，几乎所有方法为 <code>GET</code> 的 <strong>列表或详情</strong> 接口</p>
 <p>都不可避免的需要用到 <code>分页</code>、<code>查询筛选条件</code>、<code>自定义排序</code> 的功能</p>
 <p>假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间</p>
-<span id="more"></span>
 <hr>
 </div><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><div class="story post-story"><ul>
 <li>相同的功能，代码相似度高</li>
@@ -2580,7 +2582,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-12T03:24:03+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-12T03:29:44+00:00">
   <a class="notlink" href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年11月12日</p>
@@ -2608,10 +2610,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 降低代码耦合度
 尽量避免代码冗余
-
-在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口
-都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能
-假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
+">
           
             <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
           
@@ -2623,10 +2622,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 降低代码耦合度
 尽量避免代码冗余
-
-在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口
-都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能
-假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
+">
           
             <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
           
@@ -2638,10 +2634,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 降低代码耦合度
 尽量避免代码冗余
-
-在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口
-都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能
-假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间">
+">
           
             <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
           
@@ -3095,8 +3088,8 @@ Element.prototype.siblings = function(tagName){
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636687450767')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687450767', () => {
+      volantis.css('/css/message.css?time=1636687790239')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687790239', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3141,8 +3134,8 @@ Element.prototype.siblings = function(tagName){
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636687450767')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687450767', () => {
+      volantis.css('/css/message.css?time=1636687790239')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687790239', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3201,8 +3194,8 @@ Element.prototype.siblings = function(tagName){
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636687450767')
-      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687450767', () => {
+      volantis.css('/css/message.css?time=1636687790239')
+      volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/message.js?time=1636687790239', () => {
         hideMessage(done);
       });
     } else {
@@ -3425,7 +3418,7 @@ Element.prototype.siblings = function(tagName){
     
     
     
-    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1636687450767')
+    volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/rightMenu.js?time=1636687790239')
   </script>
 
 
@@ -3538,19 +3531,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1636687450767")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/sites.js?time=1636687790239")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1636687450767")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/friends.js?time=1636687790239")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1636687450767")
+        volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/plugins/contributors.js?time=1636687790239")
       }
     
   };
@@ -3622,7 +3615,7 @@ volantis.pjax.push(bindToggleButton);
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/aplayer.js?time=1636687450769')
+    await volantis.js('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/aplayer.js?time=1636687790241')
     volantis.APlayerController.music = true;
   
   })();
@@ -3756,7 +3749,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1636687450767.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/app.js?time=1636687790239.js"></script>
 
 
 <!-- optional -->
@@ -3769,7 +3762,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1636687450767");
+    return volantis.js("https://cdn.jsdelivr.net/npm/hexo-theme-volantis@5.0.0-rc.1/source/js/search/hexo.js?time=1636687790239");
   }
 
   function loadSearchService() {
@@ -4016,7 +4009,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","sameAs":["https://github.com/volantis-x"],"description":"keep learning"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://luanxu.me/","name":"乱序的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/","name":"技术"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/","name":"后端"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/Golang/","name":"Golang"}},{"@type":"ListItem","position":3,"item":{"@id":"https://luanxu.me/posts/3693711526/","name":"让前端自定义查询条件和分页"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"让前端自定义查询条件和分页","description":"需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则\n\n降低代码耦合度\n尽量避免代码冗余\n\n在使用RESTFUL API风格开发时，几乎所有方法为 GET 的 列表或详情 接口\n都不可避免的需要用到 分页、查询筛选条件、自定义排序 的功能\n假如我们为每个接口去分别开发以上三种功能，将会耗费大量时间","datePublished":"2021-08-31T13:52:53.000Z","dateModified":"2021-11-12T03:24:03.721Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://luanxu.me/posts/3693711526/"},"author":{"@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/"},"publisher":{"@type":"Organization","name":"乱序的博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://luanxu.me/posts/3693711526/","wordCount":155,"articleSection":"技术","keywords":"Gorm,Gin,Full Stack","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"乱序的博客","url":"https://luanxu.me/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/","sameAs":["https://github.com/volantis-x"],"description":"keep learning"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://luanxu.me/","name":"乱序的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/","name":"技术"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/","name":"后端"}},{"@type":"ListItem","position":2,"item":{"@id":"https://luanxu.me/categories/技术/后端/Golang/","name":"Golang"}},{"@type":"ListItem","position":3,"item":{"@id":"https://luanxu.me/posts/3693711526/","name":"让前端自定义查询条件和分页"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"让前端自定义查询条件和分页","description":"需求分析作为一名后端在做Web后端业务开发时，都应该遵循以下规则\n\n降低代码耦合度\n尽量避免代码冗余\n","datePublished":"2021-08-31T13:52:53.000Z","dateModified":"2021-11-12T03:29:44.230Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://luanxu.me/posts/3693711526/"},"author":{"@type":"Person","name":"LuanXu","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://luanxu.me/"},"publisher":{"@type":"Organization","name":"乱序的博客","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://luanxu.me/posts/3693711526/","wordCount":51,"articleSection":"技术","keywords":"Gorm,Gin,Full Stack","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
