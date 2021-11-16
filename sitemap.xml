@@ -4,42 +4,49 @@
   <url>
     <loc>https://luanxu.me/posts/3693711526/</loc>
     
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     
   </url>
   
   <url>
     <loc>https://luanxu.me/posts/2454711668/</loc>
     
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://luanxu.me/posts/18734/</loc>
+    
+    <lastmod>2021-11-16</lastmod>
     
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/index.html</loc>
     
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     
   </url>
   
   <url>
     <loc>https://luanxu.me/categories/index.html</loc>
     
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     
   </url>
   
   <url>
     <loc>https://luanxu.me/about/index.html</loc>
     
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     
   </url>
   
   <url>
     <loc>https://luanxu.me/friends/index.html</loc>
     
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     
   </url>
   
@@ -60,7 +67,7 @@
 
   <url>
     <loc>https://luanxu.me/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,77 +75,84 @@
   
   <url>
     <loc>https://luanxu.me/tags/Gorm/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/Gin/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/Full-Stack/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/SPA/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/IOC/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/Di/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/Dig/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/Wire/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/tags/Inject/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luanxu.me/tags/reading/</loc>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -147,35 +161,35 @@
   
   <url>
     <loc>https://luanxu.me/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/JavaScript/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://luanxu.me/categories/%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF/Golang/</loc>
-    <lastmod>2021-11-12</lastmod>
+    <lastmod>2021-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
